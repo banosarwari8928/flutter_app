@@ -9,7 +9,13 @@ class Homepage extends StatefulWidget {
 class _HomepageState extends State<Homepage> {
   TimeOfDay selectedTime = TimeOfDay(hour: 8, minute: 40);
   void _showDate() {
-    showTimePicker(context: context, initialTime: TimeOfDay.now());
+    showTimePicker(context: context, initialTime: TimeOfDay.now()).then((
+      value,
+    ) {
+      setState(() {
+        selectedTime = value!;
+      });
+    });
   }
 
   @override
@@ -19,7 +25,7 @@ class _HomepageState extends State<Homepage> {
       body: Center(
         child: Column(
           children: [
-            Text(selectedTime.toString()),
+            Text(selectedTime.format(context).toString()),
             MaterialButton(
               onPressed: _showDate,
               child: Text('Tell Me Your Birthday  '),
