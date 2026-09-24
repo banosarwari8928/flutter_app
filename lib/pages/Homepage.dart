@@ -7,17 +7,9 @@ class Homepage extends StatefulWidget {
 }
 
 class _HomepageState extends State<Homepage> {
-  DateTime selectedDate = DateTime.now();
+  TimeOfDay selectedTime = TimeOfDay(hour: 8, minute: 40);
   void _showDate() {
-    showDatePicker(
-      context: context,
-      firstDate: DateTime(3, 1900),
-      lastDate: DateTime.now(),
-    ).then((value) {
-      setState(() {
-        selectedDate = value!;
-      });
-    });
+    showTimePicker(context: context, initialTime: TimeOfDay.now());
   }
 
   @override
@@ -27,9 +19,7 @@ class _HomepageState extends State<Homepage> {
       body: Center(
         child: Column(
           children: [
-            Text(
-              '${selectedDate.year.toString()}-${selectedDate.month.toString()}-${selectedDate.day.toString()}',
-            ),
+            Text(),
             MaterialButton(
               onPressed: _showDate,
               child: Text('Tell Me Your Birthday  '),
