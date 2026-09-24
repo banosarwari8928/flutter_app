@@ -19,7 +19,7 @@ class _HomepageState extends State<Homepage> {
       body: Center(
         child: Column(
           children: [
-            Text(),
+            Text(selectedTime.toString()),
             MaterialButton(
               onPressed: _showDate,
               child: Text('Tell Me Your Birthday  '),
