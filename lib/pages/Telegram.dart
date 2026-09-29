@@ -26,6 +26,18 @@ class Telegram extends StatelessWidget {
           ),
         ),
       ),
+      body: ListView(
+        children: [
+          Card(
+            child: Column(
+              children: [
+                Text('Mahjabin'),
+                Expanded(child: Text('')),
+              ],
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
