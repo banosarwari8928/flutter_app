@@ -26,17 +26,29 @@ class Telegram extends StatelessWidget {
           ),
         ),
       ),
-      body: ListView(
-        children: [
-          Card(
-            child: Column(
-              children: [
-                Text('Mahjabin'),
-                Expanded(child: Text('')),
-              ],
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: ListView(
+          scrollDirection: Axis.vertical,
+          children: [
+            Card(
+              child: Column(
+                children: [
+                  Image.asset(
+                    'assets/images/profileGoogle.jpg',
+                    width: 100,
+                    alignment: Alignment(8, 3),
+                  ),
+                  Text('Mahjabin'),
+                  Align(
+                    alignment: Alignment.topRight,
+                    child: Text('Info About Mahjabin'),
+                  ),
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
