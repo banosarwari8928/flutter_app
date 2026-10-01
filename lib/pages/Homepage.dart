@@ -6,6 +6,7 @@ class Homepage extends StatefulWidget {
 }
 
 class _HomepageState extends State<Homepage> {
+  DateTime selectedDate = DateTime.now();
   void _showDate() {
     showDatePicker(
       context: context,
@@ -19,9 +20,16 @@ class _HomepageState extends State<Homepage> {
     return Scaffold(
       appBar: AppBar(title: Text('DATE PICKER')),
       body: Center(
-        child: MaterialButton(
-          onPressed: _showDate,
-          child: Text('Tell Me Your Birthday  '),
+        child: Column(
+          children: [
+            Text(
+              '${selectedDate.year.toString()}-${selectedDate.month.toString()}-${selectedDate.day.toString()}',
+            ),
+            MaterialButton(
+              onPressed: _showDate,
+              child: Text('Tell Me Your Birthday  '),
+            ),
+          ],
         ),
       ),
     );
